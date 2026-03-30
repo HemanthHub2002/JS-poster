@@ -1,0 +1,321 @@
+:root {
+    --primary-color: #ffffff;
+    --dark-bg: #111111;
+    --card-bg: #1c1c1c;
+    --gold: #d4af37;
+    --gold-light: #f3e5ab;
+    --whatsapp: #25D366;
+    --instagram: #E1306C;
+    --email: #EA4335;
+    --text-muted: #aaaaaa;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: var(--font-body);
+    color: var(--primary-color);
+    padding: 20px;
+}
+
+.poster {
+    background-color: var(--dark-bg);
+    max-width: 600px;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    position: relative;
+}
+
+/* Background Pattern/Gradient */
+.poster::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 100%;
+    background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.text-gold {
+    color: var(--gold);
+}
+
+.header {
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(180deg, rgba(28,28,28,1) 0%, rgba(17,17,17,0) 100%);
+}
+
+.brand-name {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 5px;
+}
+
+.tagline {
+    font-family: var(--font-heading);
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.image-gallery {
+    display: flex;
+    gap: 15px;
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.img-wrapper {
+    flex: 1;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.img-wrapper:hover .gallery-img {
+    transform: scale(1.05);
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    padding: 20px 15px 15px;
+    text-align: center;
+    font-family: var(--font-heading);
+    color: var(--gold-light);
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.description-section {
+    padding: 0 30px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.main-desc {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+}
+
+.sub-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+.pricing-section {
+    padding: 0 20px;
+    margin-bottom: 35px;
+}
+
+.section-title {
+    text-align: center;
+    font-family: var(--font-heading);
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.pricing-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.price-card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 10px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--gold);
+}
+
+.price-icon {
+    font-size: 1.5rem;
+    color: var(--gold);
+    width: 40px;
+}
+
+.price-card h3 {
+    flex: 1;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--gold);
+    background: rgba(212, 175, 55, 0.1);
+    padding: 5px 12px;
+    border-radius: 6px;
+}
+
+.footer {
+    background-color: #0a0a0a;
+    padding: 30px 20px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--card-bg);
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-item i {
+    font-size: 1.2rem;
+    color: var(--gold);
+}
+
+.contact-item.whatsapp {
+    border-color: rgba(37, 211, 102, 0.3);
+}
+
+.contact-item.whatsapp i {
+    color: var(--whatsapp);
+}
+
+.contact-item.instagram {
+    border-color: rgba(225, 48, 108, 0.3);
+}
+
+.contact-item.instagram i {
+    color: var(--instagram);
+}
+
+.contact-item.email {
+    border-color: rgba(234, 67, 53, 0.3);
+}
+
+.contact-item.email i {
+    color: var(--email);
+}
+
+.contact-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.location-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.location-icon {
+    font-size: 2rem;
+    color: var(--gold);
+}
+
+address {
+    font-style: normal;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Responsiveness */
+@media (max-width: 480px) {
+    .brand-name { font-size: 2.2rem; }
+    .image-gallery { flex-direction: column; }
+    .img-wrapper { height: 200px; }
+    .price-card { flex-wrap: wrap; gap: 10px; }
+    .price-card h3 { flex: 100%; text-align: center; }
+    .price { margin: 0 auto; }
+    .contact-info { flex-direction: column; width: 100%; }
+    .contact-item { justify-content: center; width: 100%; }
+}
+
+.download-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--gold);
+    color: #000;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.download-btn:hover {
+    transform: scale(1.05);
+    background-color: var(--gold-light);
+}
+
+.download-btn i {
+    margin-right: 8px;
+}
